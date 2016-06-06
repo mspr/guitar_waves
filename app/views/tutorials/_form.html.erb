@@ -17,6 +17,11 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
+  
+  <p>
+	<%= f.label :tutorial_category, 'Category' %><br>
+	<%= f.collection_select :tutorial_category_id, TutorialCategory.all, :id, :name %>
+  </p>
  
   <p>
     <%= f.submit %>

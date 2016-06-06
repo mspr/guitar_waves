@@ -45,6 +45,6 @@ class TutorialsController < ApplicationController
 	
 	private
 		def tutorial_params_from_view
-			params.require(:tutorial).permit(:title)
+			params.require(:tutorial).permit(:title, :tutorial_category_id)
 		end
 end
