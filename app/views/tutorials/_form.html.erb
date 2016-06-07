@@ -22,7 +22,12 @@
 	<%= f.label :tutorial_category, 'Category' %><br>
 	<%= f.collection_select :tutorial_category_id, TutorialCategory.all, :id, :name %>
   </p>
- 
+
+  <div ng-controller="StarRatingController">{{rating.current}} out of {{rating.max}}
+    <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)">
+    </div>
+  </div><br>
+
   <p>
     <%= f.submit %>
   </p>
