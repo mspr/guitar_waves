@@ -5,10 +5,6 @@ starApp.controller('StarRatingController', ['$scope', StarRatingController]);
 function StarRatingController($scope)
 {
     $scope.rating = { current: 3, max: 5 };
-
-    $scope.getSelectedRating = function (rating) {
-        console.log(rating);
-    }
 };
 
 starApp.directive('starRating', function () {
@@ -21,8 +17,7 @@ starApp.directive('starRating', function () {
             '</ul>',
         scope: {
             ratingValue: '=',
-            max: '=',
-            onRatingSelected: '&'
+            max: '='
         },
         link: function (scope, elem, attrs) {
 
@@ -37,9 +32,6 @@ starApp.directive('starRating', function () {
 
             scope.toggle = function (index) {
                 scope.ratingValue = index + 1;
-                scope.onRatingSelected({
-                    rating: index + 1
-                });
             };
 
             scope.$watch('ratingValue', function (oldVal, newVal) {
