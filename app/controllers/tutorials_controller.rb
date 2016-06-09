@@ -1,7 +1,11 @@
 class TutorialsController < ApplicationController
-
 	def index
 		@tutorials = Tutorial.all
+		
+		respond_to do |format|
+			format.html
+			format.json { render :json => @tutorials }
+		end
 	end
 
 	def show
