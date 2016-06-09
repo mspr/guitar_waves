@@ -4,5 +4,5 @@ module.controller('FirstController', ['$scope', FirstController]);
 
 function FirstController($scope)
 {
-  $scope.test = 'Hello world!';
+	$scope.test = 'Hello world!';
 };

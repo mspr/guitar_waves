@@ -7,17 +7,17 @@
 		</div>
 
 		<table>
-		  <tr>
-			<th>Title</th>
-		  </tr>
-		  <% @tutorials.each do |tutorial| %>
-		  <tr>
-			<td><%= tutorial.title %></td>
-			<td><%= link_to 'Show', tutorial_path(tutorial) %></td>
-			<td><%= link_to 'Edit', edit_tutorial_path(tutorial) %></td>
-			<td><%= link_to 'Destroy', tutorial_path(tutorial), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		  </tr>
-		  <% end %>
+			<tr>
+				<th>Title</th>
+			</tr>
+			<% @tutorials.each do |tutorial| %>
+				<tr>
+					<td><%= tutorial.title %></td>
+					<td><%= link_to 'Show', tutorial_path(tutorial) %></td>
+					<td><%= link_to 'Edit', edit_tutorial_path(tutorial) %></td>
+					<td><%= link_to 'Destroy', tutorial_path(tutorial), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
 		</table>
 
 		<%= link_to 'New tutorial', new_tutorial_path %>

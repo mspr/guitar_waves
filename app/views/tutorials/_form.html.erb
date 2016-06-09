@@ -1,34 +1,34 @@
 <%= form_for @tutorial do |f| %>
-  <% if @tutorial.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@tutorial.errors.count, "error") %> prohibited
-        this tutorial from being saved:
-      </h2>
-      <ul>
-        <% @tutorial.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<% if @tutorial.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@tutorial.errors.count, "error") %> prohibited
+				this tutorial from being saved:
+			</h2>
+			<ul>
+				<% @tutorial.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
   
-  <p>
-	<%= f.label :tutorial_category, 'Category' %><br>
-	<%= f.collection_select :tutorial_category_id, TutorialCategory.all, :id, :name %>
-  </p>
+	<p>
+		<%= f.label :tutorial_category, 'Category' %><br>
+		<%= f.collection_select :tutorial_category_id, TutorialCategory.all, :id, :name %>
+	</p>
 
-  <div ng-controller="StarRatingController">{{rating.current}} out of {{rating.max}}
-    <div star-rating rating-value="rating.current" max="rating.max">
-    </div>
-  </div><br>
+	<div ng-controller="StarRatingController">{{rating.current}} out of {{rating.max}}
+		<div star-rating rating-value="rating.current" max="rating.max">
+		</div>
+	</div><br>
 
-  <p>
-    <%= f.submit %>
-  </p>
+	<p>
+		<%= f.submit %>
+	</p>
 <% end %>
